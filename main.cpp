@@ -39,7 +39,7 @@ int main(int argc, char** argv) {
     m.selectRocket();
     
     /*
-    Rakete r("Affengeist");
+    Rakete r("Rakete");
     Tank ta1("Minitank", 20, 50, 50);
     Tank ta2("Megatank", 20, 500, 100);
     Triebwerk tr1("Triebwerk", 20, 20, 20);
