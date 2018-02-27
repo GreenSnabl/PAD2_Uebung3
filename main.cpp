@@ -8,46 +8,66 @@
  * File:   main.cpp
  * Author: snbl
  *
- * Created on February 22, 2018, 3:10 PM
+ * Created on February 26, 2018, 8:17 PM
  */
 
-#include <cstdlib>
+
 #include <iostream>
+#include <vector>
+
+#include "Bauteil.h"
+#include "Nutzlast.h"
 #include "Triebwerk.h"
 #include "Tank.h"
-#include "Nutzlast.h"
 #include "Rakete.h"
+#include "Sensor.h"
+#include "Managerklasse.h"
 
 using namespace std;
 
+void print(Bauteil* b)
+{
+    b->print();
+}
 
 
 int main(int argc, char** argv) {
+
+    Managerklasse m;
     
-    Tank tank1("fuck", 23 ,23, 34);
-    Tank tank2("knack", 25, 45.4, 43);
-    Tank tank3("hack", 34, 343, 34);
+    m.createRocket("Große Rakete");
+    m.selectRocket();
     
-    Nutzlast nutz1("nutz", 123);
-    Nutzlast nutz2("schmutz", 34);
-    Nutzlast nutz3("hutz", 234);
+    /*
+    Rakete r("Affengeist");
+    Tank ta1("Minitank", 20, 50, 50);
+    Tank ta2("Megatank", 20, 500, 100);
+    Triebwerk tr1("Triebwerk", 20, 20, 20);
+    Triebwerk tr2("Triebwerk2", 50, 500, 5000);
+    Nutzlast nu1("Nutzlastwurst", 100, 100, 100);
+    Sensor se1("Sensor", 500);
     
-    Triebwerk trieb1("Schnellbrumm", 23, 54, 123);
-    Triebwerk trieb2("Scmleklbrumm", 34, 34, 33);
+    r.hinzufuegen(&ta1);
+    r.hinzufuegen(&ta2);
+    r.hinzufuegen(&tr1);
+    r.hinzufuegen(&tr2);
+    r.hinzufuegen(&tr2);
+    r.hinzufuegen(&nu1);
+    r.hinzufuegen(&se1);
     
-    Rakete r("fickhure");
-    r.hinzufuegen(&tank1);
-    r.hinzufuegen(&tank2);
-    r.hinzufuegen(&tank3);
-    
-    r.hinzufuegen(&nutz1);
-    r.hinzufuegen(&nutz2);
-    r.hinzufuegen(&nutz3);
-    
-    r.hinzufuegen(&trieb1);
-    r.hinzufuegen(&trieb2);
     r.print();
- 
+    
+    r.loeschen(5);
+    r.print();
+    
+    */
+    /*
+    Nutzlast* np = nu.clone();
+    np->verbrauchen(10);
+    nu.print();
+    np->print();
+    */
     return 0;
+    
 }
 

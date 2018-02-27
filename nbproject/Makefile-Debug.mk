@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/Bauteil.o \
 	${OBJECTDIR}/Container.o \
+	${OBJECTDIR}/Managerklasse.o \
 	${OBJECTDIR}/Nutzlast.o \
 	${OBJECTDIR}/Rakete.o \
 	${OBJECTDIR}/Sensor.o \
@@ -78,6 +79,11 @@ ${OBJECTDIR}/Container.o: Container.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Container.o Container.cpp
+
+${OBJECTDIR}/Managerklasse.o: Managerklasse.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Managerklasse.o Managerklasse.cpp
 
 ${OBJECTDIR}/Nutzlast.o: Nutzlast.cpp
 	${MKDIR} -p ${OBJECTDIR}

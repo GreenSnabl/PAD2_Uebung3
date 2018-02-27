@@ -16,30 +16,33 @@
 #include "Container.h"
 #include <iostream>
 
-using std::cout; using std::endl;
-
-class Tank : public Container{
+class Tank : public Container {
 public:
-    Tank(const std::string& bezeichnung, double gewicht, double fuellVolumen, double fuellstand) 
-    : Container(bezeichnung, gewicht) , m_fuellVolumen{fuellVolumen}, m_fuellstand{fuellstand}  {}
-    Tank(const Tank& orig);
-    virtual ~Tank() {}
-    virtual void print();
-    double get_fuellvolumen() const { return m_fuellVolumen;}
-    double get_fuellstand() const {return m_fuellstand;}
-private:
-    double m_fuellVolumen;
-    double m_fuellstand;
+
+    Tank(std::string name, double gewicht, double fuellVolumen, double fuellstand)
+    : Container(name, gewicht, fuellVolumen, fuellstand) {
+    }
+
+    virtual ~Tank() {
+    }
+
+    void print();
     
+    virtual double get_treibstoff() const {
+        return m_fuellVolumen * m_fuellstand / 100;
+    }
+
+    void verbrauchen(double verbrauch) {
+        if (verbrauch > (m_fuellVolumen * m_fuellstand / 100)) return;
+        m_fuellstand -= (verbrauch * 100 / m_fuellVolumen);
+    }
+
+    virtual Tank* clone() const;
 };
 
 
-void Tank::print()
-{
-  Container::print();
-  cout << "Fuellstand: " << get_fuellstand() << "\n" 
-       << "Fuellvolumen: " << get_fuellvolumen() << "\n" << endl;
-}
+
+
 
 #endif /* TANK_H */
 

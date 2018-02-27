@@ -12,4 +12,15 @@
  */
 
 #include "Nutzlast.h"
+#include <iostream>
 
+using std::cout;
+
+void Nutzlast::print() {
+        cout << "Nutzlast\n";
+    Container::print();
+}
+
+Nutzlast* Nutzlast::clone() const{
+    return new Nutzlast(*this);
+}

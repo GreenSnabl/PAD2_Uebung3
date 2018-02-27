@@ -16,24 +16,19 @@
 #include "Container.h"
 #include <iostream>
 
-using std::cout; using std::endl;
-
-class Nutzlast : public Container{
+class Nutzlast : public Container {
 public:
-    Nutzlast(const std::string& bezeichnung, double gewicht) 
-        : Container(bezeichnung, gewicht) {}
-    Nutzlast(const Nutzlast& orig);
+
+    Nutzlast(std::string name, double gewicht, double fuellVolumen, double fuellstand)
+    : Container(name, gewicht, fuellVolumen, fuellstand) {}
     virtual ~Nutzlast() {}
-    virtual void print();    
-private:
+    
+    void print();
+    
 
+
+    virtual Nutzlast* clone() const;
 };
-
-void Nutzlast::print()
-{
-    Container::print();
-    cout << endl;
-}
 
 
 

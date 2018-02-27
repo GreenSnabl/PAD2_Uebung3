@@ -1,14 +1,18 @@
-build/Debug/GNU-Linux/main.o: main.cpp Triebwerk.h Bauteil.h Container.h \
- Tank.h Nutzlast.h Rakete.h
-
-Triebwerk.h:
+build/Debug/GNU-Linux/main.o: main.cpp Bauteil.h Nutzlast.h Container.h \
+ Triebwerk.h Tank.h Rakete.h Sensor.h Managerklasse.h
 
 Bauteil.h:
 
+Nutzlast.h:
+
 Container.h:
+
+Triebwerk.h:
 
 Tank.h:
 
-Nutzlast.h:
-
 Rakete.h:
+
+Sensor.h:
+
+Managerklasse.h:

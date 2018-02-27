@@ -12,5 +12,22 @@
  */
 
 #include "Triebwerk.h"
+#include <iostream>
 
+using std::cout;
 
+void Triebwerk::print() {
+    cout << "Triebwerk\n";
+    Bauteil::print();
+    cout <<  "Status: " << get_status() << "\n"
+            << "Schub: " << m_schub << " kN\n"
+            << "Verbrauch: " << m_verbrauch << " kg/s\n\n";
+}
+
+void Triebwerk::aktivieren() {
+    m_aktiv = true;    
+}
+
+Triebwerk* Triebwerk::clone() const{
+    return new Triebwerk(*this);
+}

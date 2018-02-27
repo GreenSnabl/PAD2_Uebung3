@@ -15,25 +15,19 @@
 #define CONTAINER_H
 
 #include "Bauteil.h"
-
-class Container : public Bauteil{
+class Container : public Bauteil {
 public:
-    Container(const std::string& bezeichnung, double gewicht) : 
-        Bauteil(bezeichnung, gewicht) {}
-    virtual ~Container() {}
-    virtual void print() = 0;
-private:
-
-
+        virtual void print() = 0;
+        virtual ~Container() {}
+        virtual double get_gewicht() {return m_gewicht + m_fuellVolumen * m_fuellstand / 100;}
+      //  virtual Container* clone() const = 0;
+protected:
+    Container(std::string name, double gewicht, double fuellVolumen, double fuellstand) : Bauteil(name, gewicht), m_fuellVolumen{fuellVolumen}, m_fuellstand{fuellstand}
+    {
+    }
+    double m_fuellVolumen;
+    double m_fuellstand;
 };
-
-void Container::print()
-{
-    cout << "Bezeichnung: "  << get_bezeichnung() << "\n"
-            << "Gewicht: " << get_gewicht() << "\n"
-            << "Status: " << aktiv_to_string() << endl;
-}
-
 
 #endif /* CONTAINER_H */
 

@@ -12,5 +12,15 @@
  */
 
 #include "Tank.h"
+#include <iostream>
 
+using std::cout;
 
+void Tank::print() {
+    cout << "Tank\n";
+    Container::print();
+}
+
+Tank* Tank::clone() const {
+    return new Tank(*this);
+}

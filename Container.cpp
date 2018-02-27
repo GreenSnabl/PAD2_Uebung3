@@ -12,3 +12,12 @@
  */
 
 #include "Container.h"
+#include <iostream>
+
+using std::cout;
+
+void Container::print() {
+    Bauteil::print();
+    cout << "Maximales Fuellvolumen: " << Container::m_fuellVolumen << " kg\n"
+            << "Fuellstand: " << Container::m_fuellstand << " %\n\n";
+}

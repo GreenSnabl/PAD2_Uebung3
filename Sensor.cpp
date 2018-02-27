@@ -8,7 +8,22 @@
  * File:   Sensor.cpp
  * Author: snbl
  * 
- * Created on February 22, 2018, 7:35 PM
+ * Created on February 27, 2018, 5:58 PM
  */
 
 #include "Sensor.h"
+#include <iostream>
+using std::cout;
+
+void Sensor::print()
+{
+        cout << "Sensor\n";
+    Bauteil::print();
+    cout << "\n";
+}
+
+Sensor* Sensor::clone() const
+{
+    return new Sensor(*this);
+}
+

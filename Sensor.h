@@ -8,21 +8,23 @@
  * File:   Sensor.h
  * Author: snbl
  *
- * Created on February 22, 2018, 7:35 PM
+ * Created on February 27, 2018, 5:58 PM
  */
 
 #ifndef SENSOR_H
 #define SENSOR_H
+
 #include "Bauteil.h"
 
-class Sensor : public Bauteil{
+class Sensor : public Bauteil {
 public:
-    Sensor();
-    Sensor(const Sensor& orig);
-    virtual ~Sensor();
-    virtual void print();
-private:
-
+    Sensor(std::string name, double gewicht) : Bauteil(name, gewicht)
+    {
+    }
+    virtual ~Sensor() {}
+    void print();
+    
+    virtual Sensor* clone() const;
 };
 
 #endif /* SENSOR_H */
