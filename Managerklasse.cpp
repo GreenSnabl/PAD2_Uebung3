@@ -222,7 +222,15 @@ void Managerklasse::editRocket(const int rocketIndex){
             addBauteil(rocketIndex, select, typ - 1);
             break;
         case 3:
+            int index;
+            cout << "Welches Bauteil möchten Sie löschen?\n";
+            raketen[rocketIndex].print();
+            cin >> index;
+            raketen[rocketIndex].loeschen(index);
+            break;
         case 4:
+            raketen[rocketIndex].aktivieren();
+            break;
         case 5:
             for (int i = 0; i < raketen.size(); ++i)
                 raketen[i].print();

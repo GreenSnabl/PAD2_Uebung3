@@ -72,6 +72,14 @@ public:
         }
         return result;
     }
+    
+    void aktivieren()
+    {
+        for (int i = 0; i < m_bauteile.size(); ++i){
+            Triebwerk* tp = dynamic_cast<Triebwerk*>(m_bauteile[i]);
+            if (tp != nullptr) tp->aktivieren();
+        }
+    }
 
     double calculate_twr() const {
         return (get_gesamtschub() * 1000) / (get_gesamtgewicht() * 9.807);
